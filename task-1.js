@@ -1,9 +1,13 @@
-const categoriesList = document.querySelector("#categories");
-// console.dir(categoriesList);
-console.log(`В списке ${categoriesList.children.length} категории`);
-const categoriesItems = document.getElementsByClassName("item");
-// console.log(categoriesItems);
-const item = (Array.from(categoriesItems)).forEach((element) => {
-    console.log(`Категория: ${element.children[0].textContent}`);
-    console.log(`Количество: ${element.children[1].children.length}`);
-})
+"use strict"
+
+//////////////1\\\\\\\\\\\\\\\
+const lentghList = document.getElementsByClassName('item').length;
+console.log(`В списке ${lentghList} категории`);
+
+const ulCategories = Array.from(document.querySelector('#categories').children);
+for (let elem of ulCategories) {
+    let category = elem.firstElementChild.textContent;
+    let quantityElem = elem.lastElementChild.children.length;
+    console.log(`Категория: ${category} \nКоличество элементов: ${quantityElem}`);
+};
+
